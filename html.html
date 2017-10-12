@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            position: absolute;
+            /*opacity: 0.5;*/
+        }
+    </style>
+
+</head>
+<body>
+    <div id="box"> </div>
+    <a href="http://baidu.com">百度</a>
+    <script>
+        var box =document.getElementById("box");
+        //        console.log(box);
+        //        1移动端300ms问题
+        //        box.onclick=function () {
+        //            alert("ok")
+        //        }
+        //        解决300ms问题
+        box.addEventListener("touchstart",function(ev){
+//            ev.preventDefault();//2 解决穿透问题
+//            this.style.display="none";
+            console.log("touchstart");
+            this.innerHTML =ev.changedTouches.length;
+        })
+    </script>
+</body>
+</html>
